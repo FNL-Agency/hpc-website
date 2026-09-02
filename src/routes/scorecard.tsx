@@ -125,7 +125,7 @@ function Quiz({
   onSelect: (v: number) => void;
   onBack: () => void;
 }) {
-  const q = SCORECARD_QUESTIONS[index];
+  const q = SCORECARD_QUESTIONS[index]!;
   const total = SCORECARD_QUESTIONS.length;
 
   return (
@@ -210,23 +210,25 @@ function Results({ answers, onRetake }: { answers: (number | null)[]; onRetake: 
     const order: string[] = [];
     const totals: Record<string, { got: number; max: number }> = {};
     SCORECARD_QUESTIONS.forEach((q, i) => {
-      if (!totals[q.key]) {
-        totals[q.key] = { got: 0, max: 0 };
+      let entry = totals[q.key];
+      if (!entry) {
+        entry = { got: 0, max: 0 };
+        totals[q.key] = entry;
         order.push(q.key);
       }
-      totals[q.key].got += filled[i];
-      totals[q.key].max += MAX_ANSWER;
+      entry.got += filled[i] ?? 0;
+      entry.max += MAX_ANSWER;
     });
     return order.map((key) => ({
       key,
-      pct: Math.round((totals[key].got / totals[key].max) * 100),
+      pct: Math.round(((totals[key]?.got ?? 0) / (totals[key]?.max || 1)) * 100),
     }));
   }, [filled]);
 
   // Recommendations: the three lowest-scoring answers, weakest first.
   const recommendations = useMemo(
     () =>
-      SCORECARD_QUESTIONS.map((q, i) => ({ q, score: filled[i], i }))
+      SCORECARD_QUESTIONS.map((q, i) => ({ q, score: filled[i] ?? 0, i }))
         .sort((a, b) => a.score - b.score || a.i - b.i)
         .slice(0, 3),
     [filled]

@@ -35,7 +35,7 @@ export function HomeWinsGrid() {
   return (
     <div className="wins-grid">
       {HOMEPAGE_WINS.map((win) => (
-        <WinCard key={win.id} win={win} tilt={win.tilt} />
+        <WinCard key={win.id} win={win} {...(win.tilt ? { tilt: win.tilt } : {})} />
       ))}
     </div>
   );

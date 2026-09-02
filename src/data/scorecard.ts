@@ -204,7 +204,7 @@ export const SCORECARD_BANDS: ScorecardBand[] = [
 export const MAX_ANSWER = 3;
 
 export function bandFor(score: number): ScorecardBand {
-  return SCORECARD_BANDS.find((b) => score >= b.min) ?? SCORECARD_BANDS[SCORECARD_BANDS.length - 1];
+  return SCORECARD_BANDS.find((b) => score >= b.min) ?? SCORECARD_BANDS[SCORECARD_BANDS.length - 1]!;
 }
 
 export function tierFor(pct: number): 'strong' | 'ok' | 'gap' {
