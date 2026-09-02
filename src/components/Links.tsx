@@ -1,6 +1,5 @@
 import type { CSSProperties, ReactNode } from 'react';
 import { Link } from '@tanstack/react-router';
-import { SITE_LINKS } from '../config/links';
 
 type Props = {
   children: ReactNode;
