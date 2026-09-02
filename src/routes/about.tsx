@@ -5,6 +5,7 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { Link } from '@tanstack/react-router';
 import { BookLink } from '../components/Links';
+import danPortraitAsset from '../assets/dan-hussey.webp.asset.json';
 
 export const Route = createFileRoute('/about')({
   head: () => ({
@@ -71,7 +72,7 @@ function AboutPage() {
         <section className="about-dan-section">
           <div className="container">
             <div className="about-dan-grid">
-              <div className="about-dan-portrait"></div>
+            <img className="about-dan-portrait" src={danPortraitAsset.url} alt="Dan Hussey" />
               <div className="about-dan-content">
                 <span className="eyebrow">Principal &amp; CEO</span>
                 <h2 className="display-2">Dan <em className="serif">Hussey</em></h2>
@@ -97,10 +98,10 @@ function AboutPage() {
             </header>
 
             <div className="team-grid">
-              <div className="team-card"><div className="team-avatar">RD</div><div className="team-name">Roxanne D.</div><div className="team-role">Senior Coach</div></div>
-              <div className="team-card"><div className="team-avatar">LW</div><div className="team-name">Leanne W.</div><div className="team-role">Coach &amp; Member Success</div></div>
-              <div className="team-card"><div className="team-avatar">CB</div><div className="team-name">Connor B.</div><div className="team-role">Case Studies &amp; Content</div></div>
-              <div className="team-card"><div className="team-avatar">+</div><div className="team-name">Specialist partners</div><div className="team-role">Major gifts · planned giving · capital projects</div></div>
+              <div className="team-card"><div className="team-name">Roxanne D.</div><div className="team-role">Senior Coach</div></div>
+              <div className="team-card"><div className="team-name">Leanne W.</div><div className="team-role">Coach &amp; Member Success</div></div>
+              <div className="team-card"><div className="team-name">Connor B.</div><div className="team-role">Case Studies &amp; Content</div></div>
+              <div className="team-card"><div className="team-name">Specialist partners</div><div className="team-role">Major gifts · planned giving · capital projects</div></div>
             </div>
           </div>
         </section>
