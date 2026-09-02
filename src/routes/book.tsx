@@ -1,5 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { BookLink } from '../components/Links';
 
 export const Route = createFileRoute('/book')({
   head: () => ({
