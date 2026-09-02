@@ -457,9 +457,7 @@
   .about-dan-section { padding: clamp(70px, 9vw, 110px) 0; }
   .about-dan-grid { display: grid; grid-template-columns: 1fr 1.3fr; gap: clamp(40px, 6vw, 80px); align-items: start; }
   @media (max-width: 900px) { .about-dan-grid { grid-template-columns: 1fr; } }
-  .about-dan-portrait { aspect-ratio: 4/5; background: linear-gradient(135deg, var(--blueprint) 0%, var(--midnight) 100%); border-radius: 4px; position: relative; overflow: hidden; border: 1px solid var(--rule); }
-  .about-dan-portrait::before { content: "DH"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); font-family: var(--font-display); font-size: clamp(80px, 14vw, 180px); font-weight: 400; font-style: italic; color: var(--ochre); opacity: 0.6; line-height: 1; letter-spacing: -0.02em; }
-  .about-dan-portrait::after { content: "Dan Hussey"; position: absolute; bottom: 18px; left: 22px; font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ochre); }
+  .about-dan-portrait { aspect-ratio: 4/5; border-radius: 4px; position: relative; overflow: hidden; border: 1px solid var(--rule); width: 100%; object-fit: cover; display: block; }
   .about-dan-content .eyebrow { color: var(--blueprint); }
   .about-dan-content .display-2 { margin-bottom: 22px; }
   .about-dan-content p { font-family: var(--font-body); font-size: 16.5px; line-height: 1.65; color: var(--ink-soft); margin-bottom: 18px; font-weight: 400; }
@@ -808,7 +806,6 @@
   .story-section::before, .about-proof-section::before, .about-proof-section::after,
   .about-belief-section::before, .cc-insight-band::before, .featured-webinar-card::before,
   .roi-band::before, .assessment-card::before, .footer::before { background: none; }
-  .about-dan-portrait { background: var(--blueprint); }
   .team-avatar { background: var(--blueprint); }
   .story-visual { background: var(--blueprint); }
 
