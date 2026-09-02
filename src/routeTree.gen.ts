@@ -11,11 +11,13 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as IndexRouteImport } from './routes/index'
 import { Route as AboutRouteImport } from './routes/about'
+import { Route as BookRouteImport } from './routes/book'
 import { Route as CampaignsRouteImport } from './routes/campaigns'
 import { Route as PricingRouteImport } from './routes/pricing'
 import { Route as ResourcesRouteImport } from './routes/resources'
 import { Route as ScorecardRouteImport } from './routes/scorecard'
 import { Route as WinsRouteImport } from './routes/wins'
+import { Route as ApiPublicBookCallRouteImport } from './routes/api/public/book-call'
 
 const IndexRoute = IndexRouteImport.update({
   id: '/',
@@ -25,6 +27,11 @@ const IndexRoute = IndexRouteImport.update({
 const AboutRoute = AboutRouteImport.update({
   id: '/about',
   path: '/about',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BookRoute = BookRouteImport.update({
+  id: '/book',
+  path: '/book',
   getParentRoute: () => rootRouteImport,
 } as any)
 const CampaignsRoute = CampaignsRouteImport.update({
@@ -52,73 +59,92 @@ const WinsRoute = WinsRouteImport.update({
   path: '/wins',
   getParentRoute: () => rootRouteImport,
 } as any)
+const ApiPublicBookCallRoute = ApiPublicBookCallRouteImport.update({
+  id: '/api/public/book-call',
+  path: '/api/public/book-call',
+  getParentRoute: () => rootRouteImport,
+} as any)
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/book': typeof BookRoute
   '/campaigns': typeof CampaignsRoute
   '/pricing': typeof PricingRoute
   '/resources': typeof ResourcesRoute
   '/scorecard': typeof ScorecardRoute
   '/wins': typeof WinsRoute
+  '/api/public/book-call': typeof ApiPublicBookCallRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/book': typeof BookRoute
   '/campaigns': typeof CampaignsRoute
   '/pricing': typeof PricingRoute
   '/resources': typeof ResourcesRoute
   '/scorecard': typeof ScorecardRoute
   '/wins': typeof WinsRoute
+  '/api/public/book-call': typeof ApiPublicBookCallRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
   '/about': typeof AboutRoute
+  '/book': typeof BookRoute
   '/campaigns': typeof CampaignsRoute
   '/pricing': typeof PricingRoute
   '/resources': typeof ResourcesRoute
   '/scorecard': typeof ScorecardRoute
   '/wins': typeof WinsRoute
+  '/api/public/book-call': typeof ApiPublicBookCallRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
   fullPaths:
     | '/'
     | '/about'
+    | '/book'
     | '/campaigns'
     | '/pricing'
     | '/resources'
     | '/scorecard'
     | '/wins'
+    | '/api/public/book-call'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/about'
+    | '/book'
     | '/campaigns'
     | '/pricing'
     | '/resources'
     | '/scorecard'
     | '/wins'
+    | '/api/public/book-call'
   id:
     | '__root__'
     | '/'
     | '/about'
+    | '/book'
     | '/campaigns'
     | '/pricing'
     | '/resources'
     | '/scorecard'
     | '/wins'
+    | '/api/public/book-call'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
   AboutRoute: typeof AboutRoute
+  BookRoute: typeof BookRoute
   CampaignsRoute: typeof CampaignsRoute
   PricingRoute: typeof PricingRoute
   ResourcesRoute: typeof ResourcesRoute
   ScorecardRoute: typeof ScorecardRoute
   WinsRoute: typeof WinsRoute
+  ApiPublicBookCallRoute: typeof ApiPublicBookCallRoute
 }
 
 declare module '@tanstack/react-router' {
@@ -135,6 +161,13 @@ declare module '@tanstack/react-router' {
       path: '/about'
       fullPath: '/about'
       preLoaderRoute: typeof AboutRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/book': {
+      id: '/book'
+      path: '/book'
+      fullPath: '/book'
+      preLoaderRoute: typeof BookRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/campaigns': {
@@ -172,17 +205,26 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof WinsRouteImport
       parentRoute: typeof rootRouteImport
     }
+    '/api/public/book-call': {
+      id: '/api/public/book-call'
+      path: '/api/public/book-call'
+      fullPath: '/api/public/book-call'
+      preLoaderRoute: typeof ApiPublicBookCallRouteImport
+      parentRoute: typeof rootRouteImport
+    }
   }
 }
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
   AboutRoute: AboutRoute,
+  BookRoute: BookRoute,
   CampaignsRoute: CampaignsRoute,
   PricingRoute: PricingRoute,
   ResourcesRoute: ResourcesRoute,
   ScorecardRoute: ScorecardRoute,
   WinsRoute: WinsRoute,
+  ApiPublicBookCallRoute: ApiPublicBookCallRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
