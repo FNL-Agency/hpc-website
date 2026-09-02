@@ -1,5 +1,4 @@
 import { createFileRoute } from '@tanstack/react-router';
-import { BookLink } from '../components/Links';
 
 export const Route = createFileRoute('/book')({
   head: () => ({
@@ -27,9 +26,30 @@ function BookPage() {
           <p className="wins-page-hero-sub">
             Schedule a 30-minute call with Dan to talk through your capital campaign and next steps.
           </p>
-          <BookLink className="btn btn-primary">
-            Book your call <span className="arrow">→</span>
-          </BookLink>
+        </div>
+      </section>
+
+      <section className="section">
+        <div className="container" style={{ maxWidth: '720px' }}>
+          <div
+            className="calendar-embed"
+            style={{
+              width: '100%',
+              minHeight: '680px',
+              borderRadius: '12px',
+              overflow: 'hidden',
+              border: '1px solid var(--color-border, rgba(0,0,0,0.1))',
+            }}
+          >
+            <iframe
+              src="https://calendar.app.google/o63mb9Mk4tK6Sh1X9"
+              title="Book a call with HPC"
+              width="100%"
+              height="100%"
+              style={{ minHeight: '680px', border: 0 }}
+              loading="lazy"
+            />
+          </div>
         </div>
       </section>
     </main>
