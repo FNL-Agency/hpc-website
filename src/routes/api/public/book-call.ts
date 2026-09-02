@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { z } from 'zod';
-import { sendTemplateEmail } from '@/lib/email-templates/send-email';
+
 
 const BookingRequest = z.object({
   name: z.string().trim().min(1).max(200),
@@ -25,6 +25,10 @@ export const Route = createFileRoute('/api/public/book-call')({
         }
 
         const { name, email, company } = parsed.data;
+
+        const { sendTemplateEmail } = await import(
+          '../../../lib/email-templates/send-email'
+        );
 
         const result = await sendTemplateEmail(
           'book-call-request',
