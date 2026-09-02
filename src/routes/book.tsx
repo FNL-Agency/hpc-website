@@ -42,7 +42,7 @@ function BookPage() {
             }}
           >
             <iframe
-              src="https://calendar.app.google/o63mb9Mk4tK6Sh1X9"
+              src="https://calendar.google.com/calendar/appointments/schedules/AcZssZ0Kaemut1ha57FzpIB-hF4flYv84U1Cldax3rkCEojRVL8F5JNTGaiXtSdcOIAY3ily6qcLm_iJ?gv=true"
               title="Book a call with HPC"
               width="100%"
               height="100%"
