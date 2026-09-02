@@ -9,19 +9,10 @@ type Props = {
 };
 
 /**
- * Every booking CTA on the site. Reads BOOKING_URL from src/config/links.ts so
- * there is exactly one place to change it. While the URL is empty the link
- * renders inert rather than sending people to a broken "#".
+ * Every booking CTA on the site. Always routes to the in-site /book page,
+ * which embeds the scheduler, so visitors never leave the site.
  */
 export function BookLink({ children, className, style }: Props) {
-  const url = SITE_LINKS.BOOKING_URL;
-  if (url) {
-    return (
-      <a href={url} className={className} style={style} target="_blank" rel="noopener noreferrer">
-        {children}
-      </a>
-    );
-  }
   return (
     <Link to="/book" className={className} style={style}>
       {children}
