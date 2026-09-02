@@ -15,23 +15,17 @@ type Props = {
  */
 export function BookLink({ children, className, style }: Props) {
   const url = SITE_LINKS.BOOKING_URL;
-  if (!url) {
+  if (url) {
     return (
-      <a
-        href="#"
-        className={className}
-        style={style}
-        aria-disabled="true"
-        onClick={(e) => e.preventDefault()}
-      >
+      <a href={url} className={className} style={style} target="_blank" rel="noopener noreferrer">
         {children}
       </a>
     );
   }
   return (
-    <a href={url} className={className} style={style} target="_blank" rel="noopener noreferrer">
+    <Link to="/book" className={className} style={style}>
       {children}
-    </a>
+    </Link>
   );
 }
 
