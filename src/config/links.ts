@@ -8,8 +8,8 @@
    Fill it in and they all wire up at once.
    ========================================================================== */
 export const SITE_LINKS = {
-  /** Dan's booking link. REQUIRED before launch. */
-  BOOKING_URL: '',
+  /** Dan's booking link. */
+  BOOKING_URL: 'https://calendar.app.google/o63mb9Mk4tK6Sh1X9',
   /** Luma event page for Capital Campaigns Live. Dan plans to move to Circle. */
   WEBINAR_URL: '',
   /** HPC company page on LinkedIn. */
