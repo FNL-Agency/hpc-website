@@ -1,6 +1,6 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { z } from 'zod';
-import { sendTemplateEmail } from '@/lib/email-templates/send-email';
+
 
 const BookingRequest = z.object({
   name: z.string().trim().min(1).max(200),
