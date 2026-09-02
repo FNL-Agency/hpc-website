@@ -10,7 +10,12 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+// The approved HPC design system. Loaded AFTER styles.css so its `body` rules
+// win over Tailwind's base layer. Do not reorder these two links.
+import hpcCss from "../hpc-design-system.css?url";
 import { reportLovableError } from "../lib/lovable-error-reporting";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 function NotFoundComponent() {
   return (
@@ -77,19 +82,30 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Lovable App" },
-      { name: "description", content: "Lovable Generated Project" },
-      { name: "author", content: "Lovable" },
-      { property: "og:title", content: "Lovable App" },
-      { property: "og:description", content: "Lovable Generated Project" },
+      { title: "HPC — Capital campaigns, designed for the small nonprofit" },
+      {
+        name: "description",
+        content:
+          "The Capital Campaign Accelerator: coaching, system and community for nonprofits running $1M–$5M campaigns — without a six-figure feasibility study to start.",
+      },
+      { name: "author", content: "HPC" },
+      { property: "og:title", content: "HPC — Capital campaigns, designed for the small nonprofit" },
+      {
+        property: "og:description",
+        content:
+          "Coaching, system and community for nonprofits running $1M–$5M capital campaigns.",
+      },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
-      { name: "twitter:site", content: "@Lovable" },
     ],
     links: [
+      { rel: "stylesheet", href: appCss },
+      { rel: "stylesheet", href: hpcCss },
+      { rel: "preconnect", href: "https://fonts.googleapis.com" },
+      { rel: "preconnect", href: "https://fonts.gstatic.com", crossOrigin: "anonymous" },
       {
         rel: "stylesheet",
-        href: appCss,
+        href: "https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;0,700;1,400;1,600;1,700&family=Outfit:wght@300;400;500;600;700&display=swap",
       },
       { rel: "icon", href: "/favicon.ico", type: "image/x-icon" },
     ],
@@ -119,8 +135,14 @@ function RootComponent() {
 
   return (
     <QueryClientProvider client={queryClient}>
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
+      <Header />
+      <div id="main-content" />
       {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
       <Outlet />
+      <Footer />
     </QueryClientProvider>
   );
 }
