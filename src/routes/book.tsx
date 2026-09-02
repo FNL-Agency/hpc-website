@@ -61,15 +61,33 @@ function BookPage() {
             <form onSubmit={handleSubmit} style={{ display: 'grid', gap: '1rem' }}>
               <label style={{ display: 'grid', gap: '0.375rem' }}>
                 Name
-                <input name="name" type="text" required autoComplete="name" />
+                <input
+                  name="name"
+                  type="text"
+                  required
+                  autoComplete="name"
+                  className="w-full rounded-md border border-input bg-background px-3 py-2 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                />
               </label>
               <label style={{ display: 'grid', gap: '0.375rem' }}>
                 Email
-                <input name="email" type="email" required autoComplete="email" />
+                <input
+                  name="email"
+                  type="email"
+                  required
+                  autoComplete="email"
+                  className="w-full rounded-md border border-input bg-background px-3 py-2 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                />
               </label>
               <label style={{ display: 'grid', gap: '0.375rem' }}>
                 Company
-                <input name="company" type="text" required autoComplete="organization" />
+                <input
+                  name="company"
+                  type="text"
+                  required
+                  autoComplete="organization"
+                  className="w-full rounded-md border border-input bg-background px-3 py-2 text-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                />
               </label>
               <button type="submit" className="btn btn-primary" disabled={status === 'sending'}>
                 {status === 'sending' ? 'Sending…' : 'Submit'} <span className="arrow">→</span>
