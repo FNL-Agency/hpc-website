@@ -26,6 +26,10 @@ export const Route = createFileRoute('/api/public/book-call')({
 
         const { name, email, company } = parsed.data;
 
+        const { sendTemplateEmail } = await import(
+          '../../../lib/email-templates/send-email'
+        );
+
         const result = await sendTemplateEmail(
           'book-call-request',
           'executive@hpc.agency',
