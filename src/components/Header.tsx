@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { Link, useRouterState } from '@tanstack/react-router';
 import { BookLink } from './Links';
+import hpcLogoAsset from '../assets/HPC-Logo-TriBlue.webp.asset.json';
 
 const NAV = [
   { to: '/campaigns', label: 'Capital Campaigns' },
@@ -10,21 +11,9 @@ const NAV = [
   { to: '/about', label: 'About' },
 ];
 
-/**
- * The HPC brand mark. This is a placeholder recreation built from the same
- * rounded-pill motif as the real logo — swap it for the real asset when it
- * lands, keeping the same dimensions.
- */
 export function HpcMark() {
   return (
-    <span className="hpc-symbol" aria-hidden="true">
-      <svg width="36" height="32" viewBox="0 0 36 32" xmlns="http://www.w3.org/2000/svg">
-        <rect x="20" y="0" width="14" height="9" rx="4.5" fill="#FECE2E" />
-        <rect x="3" y="11" width="14" height="9" rx="4.5" fill="#00629E" transform="rotate(-8 10 15.5)" />
-        <rect x="19" y="13" width="14" height="9" rx="4.5" fill="#00629E" />
-        <rect x="6" y="22" width="14" height="9" rx="4.5" fill="#F04B24" />
-      </svg>
-    </span>
+    <img className="hpc-logo-image" src={hpcLogoAsset.url} alt="HPC" />
   );
 }
 
@@ -40,11 +29,6 @@ export default function Header() {
       <div className="site-header-inner">
         <Link to="/" className="logo">
           <HpcMark />
-          <span className="logo-mark-text">hpc</span>
-          {/* Hidden by CSS — the client dropped this wordmark. Kept in the markup. */}
-          <span className="logo-sub">
-            Hussey<br />Philanthropic
-          </span>
         </Link>
 
         <button

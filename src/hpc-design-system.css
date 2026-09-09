@@ -73,8 +73,7 @@
     text-rendering: optimizeLegibility;
   }
 
-  .hpc-symbol { display: inline-block; flex-shrink: 0; }
-  .hpc-symbol svg { display: block; }
+  .hpc-logo-image { display: block; width: 132px; height: auto; flex-shrink: 0; }
 
   .site-header { position: sticky; top: 0; z-index: 50; background: var(--paper); border-bottom: 1px solid var(--rule); padding: 18px 0; backdrop-filter: blur(8px); }
   .site-header-inner { max-width: var(--max); margin: 0 auto; padding: 0 var(--gutter); display: flex; align-items: center; justify-content: space-between; gap: 40px; }
@@ -361,6 +360,7 @@
   @media (max-width: 500px) { .footer-grid { grid-template-columns: 1fr; } }
   .footer-brand .logo-mark-text { color: var(--snowfield); font-size: 26px; font-weight: 600; }
   .footer-brand .logo-sub { color: var(--ochre); border-color: rgba(255,255,255,0.18); }
+  .footer-brand .hpc-logo-image { filter: brightness(0) invert(1); }
   .footer-tagline { font-family: var(--font-body); margin-top: 18px; font-size: 14px; line-height: 1.55; color: var(--blueprint-soft); max-width: 28ch; font-weight: 400; }
   .footer-newsletter { margin-top: 22px; }
   .footer-newsletter-label { font-family: var(--font-body); font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase; color: var(--ochre); margin-bottom: 10px; display: block; }
