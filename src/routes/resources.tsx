@@ -90,7 +90,7 @@ function ResourcesPage() {
                 <span className="tool-card-cta">Take the scorecard <span className="arrow">→</span></span>
               </Link>
 
-              <Link to="/#calculator" className="tool-card">
+              <a href="/#calculator" className="tool-card">
                 <div className="tool-card-icon">
                   <svg viewBox="0 0 40 40" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
                     <rect x="5" y="5" width="30" height="30" rx="2" />
