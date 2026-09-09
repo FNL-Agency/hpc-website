@@ -84,7 +84,7 @@ function HomePage() {
         <section className="wing-section section">
           <div className="container">
             <header className="wing-header">
-              <div className="brand-graphic bg-accent brand-graphic-bars"><img src={colourBarsAsset.url} alt="" /></div>
+              <div className="brand-graphic brand-graphic-bars"><img src={colourBarsAsset.url} alt="" /></div>
               <span className="eyebrow">Sound familiar?</span>
               <h2 className="display-2">From <em className="serif">winging it</em> <span className="wing-headline-arrow">→</span> to <em className="serif">running it</em>.</h2>
               <p className="lede">Most of the small-to-mid-sized organizations we work with don't know what they don't know about capital campaigns. Here's what changes when you have a system, coaches, and a community of campaigns running alongside yours.</p>
@@ -420,7 +420,7 @@ function HomePage() {
 
         <section className="final-cta-section">
           <div className="container final-cta-inner">
-            <div className="brand-graphic bg-accent brand-graphic-blocks"><img src={blueBlocksAsset.url} alt="" /></div>
+            <div className="brand-graphic brand-graphic-blocks"><img src={blueBlocksAsset.url} alt="" /></div>
             <span className="eyebrow">Ready when you are</span>
             <h2 className="display-1">Let's see if we're <em className="serif">a fit</em>.</h2>
             <p className="lede">A 30-minute call with our team. No pitch. We'll audit where you are and tell you honestly whether the Accelerator is the right next step.</p>
