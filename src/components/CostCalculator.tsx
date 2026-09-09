@@ -18,7 +18,7 @@ export default function CostCalculator() {
   const gross = net + cost;
 
   return (
-    <section className="calc-section">
+    <section id="calculator" className="calc-section">
       <div className="container">
         <div className="calc-grid">
           <div className="calc-copy">
