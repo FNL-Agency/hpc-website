@@ -6,6 +6,7 @@ import { FooterNewsletterForm } from './NewsletterForm';
 import { Link } from '@tanstack/react-router';
 import { BookLink, ExternalLink } from './Links';
 import { SITE_LINKS } from '../config/links';
+import { HpcMark } from './Header';
 
 export default function Footer() {
   return (
@@ -18,16 +19,7 @@ export default function Footer() {
           <div className="footer-grid">
             <div className="footer-brand">
               <div className="logo">
-                <span className="hpc-symbol" aria-hidden="true">
-                  <svg width="36" height="32" viewBox="0 0 36 32" xmlns="http://www.w3.org/2000/svg">
-                    <rect x="20" y="0" width="14" height="9" rx="4.5" fill="#FECE2E" />
-                    <rect x="3" y="11" width="14" height="9" rx="4.5" fill="#00629E" transform="rotate(-8 10 15.5)" />
-                    <rect x="19" y="13" width="14" height="9" rx="4.5" fill="#00629E" />
-                    <rect x="6" y="22" width="14" height="9" rx="4.5" fill="#F04B24" />
-                  </svg>
-                </span>
-                <span className="logo-mark-text">hpc</span>
-                <span className="logo-sub">Hussey<br />Philanthropic</span>
+                <HpcMark />
               </div>
               <p className="footer-tagline">Capital campaigns, designed for the small to mid-sized nonprofit.</p>
               <div className="footer-newsletter">
