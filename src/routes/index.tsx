@@ -7,6 +7,8 @@ import CostCalculator from '../components/CostCalculator';
 import { HomeWinsGrid } from '../components/Wins';
 import { Link } from '@tanstack/react-router';
 import { BookLink } from '../components/Links';
+import colourBarsAsset from '../assets/hpc-colour-bars.png.asset.json';
+import blueBlocksAsset from '../assets/hpc-blue-blocks.png.asset.json';
 
 export const Route = createFileRoute('/')({
   head: () => ({
@@ -82,7 +84,7 @@ function HomePage() {
         <section className="wing-section section">
           <div className="container">
             <header className="wing-header">
-              <div className="brand-graphic bg-accent"><svg viewBox="0 0 262 262" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="34" cy="228" r="7" fill="rgb(199,61,26)" /><circle cx="48" cy="214" r="7" fill="rgb(203,73,27)" /><circle cx="63" cy="201" r="7" fill="rgb(208,85,29)" /><circle cx="77" cy="187" r="7" fill="rgb(212,97,31)" /><circle cx="91" cy="173" r="7" fill="rgb(217,109,32)" /><circle cx="106" cy="160" r="7" fill="rgb(221,121,34)" /><circle cx="120" cy="156" r="7" fill="rgb(226,133,36)" /><circle cx="134" cy="132" r="7" fill="rgb(231,145,37)" /><circle cx="149" cy="119" r="7" fill="rgb(235,157,39)" /><circle cx="163" cy="105" r="7" fill="rgb(240,169,41)" /><circle cx="177" cy="91" r="7" fill="rgb(244,181,42)" /><circle cx="192" cy="78" r="7" fill="rgb(249,193,44)" /><circle cx="206" cy="64" r="7" fill="rgb(254,206,46)" /><path d="M214 58 L214 88 M214 58 L184 58" stroke="#FECE2E" strokeWidth="13" strokeLinecap="round" strokeLinejoin="round" /></svg></div>
+              <div className="brand-graphic bg-accent brand-graphic-bars"><img src={colourBarsAsset.url} alt="" /></div>
               <span className="eyebrow">Sound familiar?</span>
               <h2 className="display-2">From <em className="serif">winging it</em> <span className="wing-headline-arrow">→</span> to <em className="serif">running it</em>.</h2>
               <p className="lede">Most of the small-to-mid-sized organizations we work with don't know what they don't know about capital campaigns. Here's what changes when you have a system, coaches, and a community of campaigns running alongside yours.</p>
@@ -418,7 +420,7 @@ function HomePage() {
 
         <section className="final-cta-section">
           <div className="container final-cta-inner">
-            <div className="brand-graphic bg-accent"><svg viewBox="0 0 262 262" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><rect x="8" y="224" width="70" height="24" rx="12" fill="#7ECEF3" /><rect x="30" y="198" width="70" height="24" rx="12" fill="#00629E" /><rect x="52" y="172" width="70" height="24" rx="12" fill="#7ECEF3" /><rect x="74" y="146" width="70" height="24" rx="12" fill="#00629E" /><rect x="96" y="120" width="70" height="24" rx="12" fill="#7ECEF3" /><rect x="118" y="94" width="70" height="24" rx="12" fill="#00629E" /><rect x="140" y="68" width="70" height="24" rx="12" fill="#7ECEF3" /><rect x="162" y="42" width="70" height="24" rx="12" fill="#00629E" /><rect x="184" y="16" width="70" height="24" rx="12" fill="#00629E" /></svg></div>
+            <div className="brand-graphic bg-accent brand-graphic-blocks"><img src={blueBlocksAsset.url} alt="" /></div>
             <span className="eyebrow">Ready when you are</span>
             <h2 className="display-1">Let's see if we're <em className="serif">a fit</em>.</h2>
             <p className="lede">A 30-minute call with our team. No pitch. We'll audit where you are and tell you honestly whether the Accelerator is the right next step.</p>

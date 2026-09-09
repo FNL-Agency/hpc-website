@@ -6,6 +6,7 @@ import { createFileRoute } from '@tanstack/react-router';
 import { Link } from '@tanstack/react-router';
 import { BookLink } from '../components/Links';
 import danPortraitAsset from '../assets/dan-hussey.webp.asset.json';
+import blueFlagAsset from '../assets/hpc-blue-flag.png.asset.json';
 
 export const Route = createFileRoute('/about')({
   head: () => ({
@@ -118,11 +119,7 @@ function AboutPage() {
 
         <section className="about-belief-section">
           <div className="container about-belief-inner">
-            <div className="brand-graphic bg-accent wide"><svg viewBox="0 0 280 132" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-      <rect x="8" y="102" width="60" height="26" rx="13" fill="#7ECEF3" /><rect x="76" y="102" width="60" height="26" rx="13" fill="#00629E" /><rect x="144" y="102" width="60" height="26" rx="13" fill="#7ECEF3" /><rect x="212" y="102" width="60" height="26" rx="13" fill="#00629E" />
-      <rect x="42" y="70" width="60" height="26" rx="13" fill="#00629E" /><rect x="110" y="70" width="60" height="26" rx="13" fill="#7ECEF3" /><rect x="178" y="70" width="60" height="26" rx="13" fill="#00629E" />
-      <rect x="76" y="38" width="60" height="26" rx="13" fill="#7ECEF3" /><rect x="144" y="38" width="60" height="26" rx="13" fill="#00629E" />
-      <rect x="110" y="6" width="60" height="26" rx="13" fill="#7ECEF3" /></svg></div>
+            <div className="brand-graphic bg-accent brand-graphic-flag"><img src={blueFlagAsset.url} alt="" /></div>
             <span className="eyebrow">What we believe</span>
             <p className="about-belief-statement">
               Capital campaigns shouldn't be <em className="serif">gate-kept</em> by a few exclusive consultancies that charge hundreds of thousands of dollars to start. Most of the organizations that need to run a campaign are small, lean, and led by someone doing it for the first time. Those organizations deserve a real system, real coaches, and a real community — at a price that fits the campaign they're actually running.
