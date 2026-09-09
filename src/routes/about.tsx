@@ -119,7 +119,7 @@ function AboutPage() {
 
         <section className="about-belief-section">
           <div className="container about-belief-inner">
-            <div className="brand-graphic bg-accent brand-graphic-flag"><img src={blueFlagAsset.url} alt="" /></div>
+            <div className="brand-graphic brand-graphic-flag"><img src={blueFlagAsset.url} alt="" /></div>
             <span className="eyebrow">What we believe</span>
             <p className="about-belief-statement">
               Capital campaigns shouldn't be <em className="serif">gate-kept</em> by a few exclusive consultancies that charge hundreds of thousands of dollars to start. Most of the organizations that need to run a campaign are small, lean, and led by someone doing it for the first time. Those organizations deserve a real system, real coaches, and a real community — at a price that fits the campaign they're actually running.
