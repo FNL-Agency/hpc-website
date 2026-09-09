@@ -102,7 +102,7 @@ function ResourcesPage() {
                 <h3 className="tool-card-title">Capital Campaign Cost Calculator</h3>
                 <p className="tool-card-desc">Drop in what your mission needs. See the campaign cost folded into the goal — and why none of it has to come out of your operating budget.</p>
                 <span className="tool-card-cta">Run the numbers <span className="arrow">→</span></span>
-              </Link>
+              </a>
             </div>
           </div>
         </section>
